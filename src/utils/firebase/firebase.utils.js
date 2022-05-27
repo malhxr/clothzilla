@@ -6,16 +6,18 @@ import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
 } from 'firebase/auth';
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDhkcywUGSuQdEcirR2hZBGxxMm-J_UO9M",
-    authDomain: "clothzilla-14935.firebaseapp.com",
-    projectId: "clothzilla-14935",
-    storageBucket: "clothzilla-14935.appspot.com",
-    messagingSenderId: "923737247879",
-    appId: "1:923737247879:web:b02a13592aea933d026822"
+  apiKey: "AIzaSyDhkcywUGSuQdEcirR2hZBGxxMm-J_UO9M",
+  authDomain: "clothzilla-14935.firebaseapp.com",
+  projectId: "clothzilla-14935",
+  storageBucket: "clothzilla-14935.appspot.com",
+  messagingSenderId: "923737247879",
+  appId: "1:923737247879:web:b02a13592aea933d026822"
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
@@ -74,3 +76,8 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 
   return await signInWithEmailAndPassword(auth, email, password);
 };
+
+export const signOutUser = async () => await signOut(auth);
+
+export const onAuthStateChangedListener = (callback) =>
+  onAuthStateChanged(auth, callback);
