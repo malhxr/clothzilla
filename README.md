@@ -1,3 +1,5 @@
+# ClothZilla
+
 ClothZilla is an e-commerce website that accomplishes people’s need to buy their choice of apparel from any remote place. ClothZilla is a website that is built with modern technologies like React.Js.
 
 Users can move between various pages with numerous choices of apparel and can add them to the cart and still keep surfing at the same time.
